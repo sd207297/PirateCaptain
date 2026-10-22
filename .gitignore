@@ -1,0 +1,72 @@
+# Unity-generated caches and local preferences
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+/[Bb]uild/
+/[Bb]uilds/
+/[Mm]emoryCaptures/
+/[Rr]ecordings/
+/UIElementsSchema/
+.utmp/
+*.log
+
+# IDE-generated files
+.vs/
+.idea/
+.gradle/
+ExportedObj/
+.consulo/
+*.csproj
+*.unityproj
+*.sln
+*.slnx
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+*.DotSettings.user
+*.pidb.meta
+*.pdb.meta
+*.mdb.meta
+
+# Build output and crash reports
+*.apk
+*.aab
+*.app
+*.unitypackage
+*.unitypackage.meta
+sysinfo.txt
+mono_crash.*
+crashlytics-build.properties
+
+# HybridCLR local toolchain and generated build cache
+/HybridCLRData/
+/HuatuoData/
+
+# Generated Addressables and test artifacts
+/ServerData/
+/[Aa]ssets/StreamingAssets/aa*
+/[Aa]ssets/AddressableAssetsData/link.xml*
+/[Aa]ssets/Addressables_Temp*
+/[Aa]ssets/AddressableAssetsData/*/*.bin*
+/[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
+/[Aa]ssets/[Ss]ceneDependencyCache*
+
+# Local credentials and OS files
+.env
+.env.*
+!.env.example
+*.keystore
+*.jks
+.DS_Store
+Thumbs.db
+Desktop.ini

@@ -1,0 +1,14 @@
+{
+    "name": "ForeverNine.IoC.Editor",
+    "rootNamespace": "",
+    "references": ["ForeverNine.IoC"],
+    "includePlatforms": ["Editor"],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
