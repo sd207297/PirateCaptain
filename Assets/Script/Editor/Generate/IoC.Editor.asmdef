@@ -1,7 +1,7 @@
 {
-    "name": "ForeverNine.IoC.Editor",
+    "name": "IoC.Editor",
     "rootNamespace": "",
-    "references": ["ForeverNine.IoC"],
+    "references": ["IoC"],
     "includePlatforms": ["Editor"],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

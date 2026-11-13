@@ -1,5 +1,5 @@
 {
-    "name": "ForeverNine.IoC",
+    "name": "IoC",
     "rootNamespace": "ForeverNine.IoC",
     "references": [],
     "includePlatforms": [],
