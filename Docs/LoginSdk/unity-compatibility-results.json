@@ -1,0 +1,14 @@
+{
+  "date": "2026-11-17",
+  "targetFramework": "netstandard2.1",
+  "languageVersion": "9.0",
+  "unityReferenceVersion": "2022.3.62f1",
+  "nakamaUnityVersion": "3.23.0",
+  "includedSources": ["client-sdk/Runtime", "client-sdk/Samples~/BasicLogin", "Nakama/Runtime"],
+  "checks": [
+    {"defines": "UNITY_EDITOR", "passed": true, "errors": 0},
+    {"defines": "UNITY_WEBGL", "passed": true, "errors": 0}
+  ],
+  "knownWarnings": "Four obsolete UnityWebRequest property warnings in the unmodified official Nakama and Satori adapters.",
+  "limitations": "Managed-source compile compatibility only. Does not run Unity Play Mode, compile Unity 6/IL2CPP players, execute WebGL JS, or validate mobile devices."
+}

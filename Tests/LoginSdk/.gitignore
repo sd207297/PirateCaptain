@@ -1,0 +1,5 @@
+**/bin/
+**/obj/
+.dotnet/
+!Unit/PirateCaptain.Login.Tests.csproj
+!Integration/PirateLogin.Integration.csproj

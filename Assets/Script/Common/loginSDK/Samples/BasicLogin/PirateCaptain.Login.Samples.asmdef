@@ -1,0 +1,6 @@
+{
+  "name": "PirateCaptain.Login.Samples",
+  "rootNamespace": "PirateCaptain.Samples",
+  "references": ["PirateCaptain.Login", "NakamaRuntime"],
+  "autoReferenced": true
+}
