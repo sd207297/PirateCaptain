@@ -1,0 +1,5 @@
+{
+    "name": "PirateCaptain.Framework",
+    "rootNamespace": "PirateCaptain.Framework",
+    "noEngineReferences": true
+}
