@@ -6,9 +6,9 @@ namespace PirateCaptain.Login
     [CreateAssetMenu(fileName = "LoginServerConfig", menuName = "Pirate Captain/Login Server Config")]
     public sealed class LoginServerConfig : ScriptableObject
     {
-        [SerializeField] private string scheme = "http";
-        [SerializeField] private string host = "127.0.0.1";
-        [SerializeField] private int port = 17350;
+        [SerializeField] private string scheme = "https";
+        [SerializeField] private string host = "43.138.240.10";
+        [SerializeField] private int port = 443;
         [SerializeField] private int timeoutSeconds = 10;
         [SerializeField] private int refreshBeforeExpirySeconds = 60;
         [SerializeField] private int maxReconnectAttempts = 3;

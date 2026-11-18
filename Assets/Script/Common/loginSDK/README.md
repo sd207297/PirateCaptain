@@ -12,22 +12,26 @@ SDK 本身不创建登录界面，不修改服务端，也不实现服务端尚�
 - `Samples/BasicLogin/`：随项目编译的调用示例。
 - 依赖官方 `com.heroiclabs.nakama-unity` **3.23.0**，来源提交 `704f5da244a49d942f383965f5549420522eb8e0`。
 
-loginSDK 是项目内的普通源码模块，位于 `Assets/Script/Common/loginSDK/`，不使用自定义 UPM package。`Runtime/` 包含底层实现，`Samples/BasicLogin/` 提供调用示例。官方 Nakama 依赖保留在 `Packages/com.heroiclabs.nakama-unity/`，包括原始许可证和平台适配文件。最低支持 Unity 2022.3，当前项目为 Unity 6。
+loginSDK 是项目内的普通源码模块，位于 `Assets/Script/Common/loginSDK/`，不使用自定义 UPM package。`Runtime/` 包含底层实现，`Samples/BasicLogin/` 提供调用示例。官方 Nakama 依赖由 `Packages/manifest.json` 引用，Unity 将包解析到 `Library/PackageCache/`，保留原始许可证和平台适配文件。最低支持 Unity 2022.3，当前项目为 Unity 6。
 
 ## 连接当前开发服务器
 
-当前服务器 API 仅绑定服务器自己的回环地址；开发电脑通过 SSH 端口转发访问：
+公网入口为 `https://43.138.240.10`，使用可信 IP 证书；客户端无需 SSH 转发。云端安全组需允许 TCP 443。
 
 | 配置项 | 当前开发值 |
 | --- | --- |
-| `Scheme` | `http` |
-| `Host` | `127.0.0.1` |
-| `Port` | `17350` |
+| `Scheme` | `https` |
+| `Host` | `43.138.240.10` |
+| `Port` | `443` |
 | `ServerKey` | 由开发配置传入服务器 `NAKAMA_SERVER_KEY` 的值 |
 
-先保持已有的 SSH 通道运行。HTTP 和 WebSocket 共用此端口，SDK 会自动选择 `ws` 或 `wss`。不要将公网 IP 与这个回环监听端口直接组合使用；手机上的 `127.0.0.1` 指手机自身，也不能访问电脑的 SSH 通道。手机或公网客户端需要另行配置其可访问的服务入口和 HTTPS。
+HTTP API 和 WebSocket 共用 443 端口，SDK 自动使用 `wss`。无需启用 `AllowInsecureHttp` 或绕过证书校验。新建配置资源默认使用此地址；已有配置资源需要在 Inspector 中改为上述值。
 
 `NAKAMA_SERVER_KEY` 是客户端 API 访问键，会随客户端分发，不能承担玩家身份认证。不要向客户端传入数据库密码、Console 密码、`NAKAMA_SESSION_KEY`、`NAKAMA_REFRESH_KEY`、HTTP 管理键或 SSH 私钥。配置资源与示例中没有内置任何实际密钥。
+
+IPv6 可选入口已配置：`https://[2402:4e00:c013:7500:b426:6f12:2e2:0]:443`。
+使用时设置 `Scheme = "https"`、`Host = "2402:4e00:c013:7500:b426:6f12:2e2:0"`、`Port = 443`。
+完整 URL 需要方括号；Host 字段仅填地址。客户端网络必须具备 IPv6 路由；当前开发电脑没有该路由，因此默认暂时保留 IPv4。IPv6 的客户端 HTTPS/WSS 联调仍待可用网络验证。
 
 ## 最小接入
 
@@ -38,9 +42,9 @@ using PirateCaptain.Login;
 
 var login = UnityLoginFactory.Create(new LoginOptions
 {
-    Scheme = "http",
-    Host = "127.0.0.1",
-    Port = 17350,
+    Scheme = "https",
+    Host = "43.138.240.10",
+    Port = 443,
     ServerKey = clientServerKey
 });
 
@@ -128,7 +132,7 @@ string GetOrCreateDeviceId();
 
 ```csharp
 var store = new DevelopmentPlayerPrefsCredentialStore(
-    "http://127.0.0.1:17350/default",
+    "https://43.138.240.10:443/default",
     allowPlaintextStorage: true);
 var login = UnityLoginFactory.Create(options, store);
 

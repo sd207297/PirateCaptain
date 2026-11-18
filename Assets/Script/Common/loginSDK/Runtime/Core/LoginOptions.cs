@@ -6,9 +6,9 @@ namespace PirateCaptain.Login
     /// <summary>Connection settings for the existing Nakama authentication service.</summary>
     public sealed class LoginOptions
     {
-        public string Scheme { get; set; } = "http";
-        public string Host { get; set; } = "127.0.0.1";
-        public int Port { get; set; } = 17350;
+        public string Scheme { get; set; } = "https";
+        public string Host { get; set; } = "43.138.240.10";
+        public int Port { get; set; } = 443;
         public string ServerKey { get; set; }
         public int TimeoutSeconds { get; set; } = 10;
         public int RefreshBeforeExpirySeconds { get; set; } = 60;

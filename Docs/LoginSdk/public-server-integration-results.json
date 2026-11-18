@@ -1,0 +1,86 @@
+[
+  {
+    "name": "Unknown login does not create an account",
+    "passed": true
+  },
+  {
+    "name": "Registration returns both tokens and created=true",
+    "passed": true
+  },
+  {
+    "name": "Authenticated account matches registration",
+    "passed": true
+  },
+  {
+    "name": "Repeated registration uses the same account",
+    "passed": true
+  },
+  {
+    "name": "Wrong password is rejected",
+    "passed": true
+  },
+  {
+    "name": "Email login retains identity",
+    "passed": true
+  },
+  {
+    "name": "Authenticated WebSocket connects",
+    "passed": true
+  },
+  {
+    "name": "WebSocket request receives server acknowledgement",
+    "passed": true
+  },
+  {
+    "name": "Connection survives the server heartbeat interval",
+    "passed": true
+  },
+  {
+    "name": "Refresh preserves identity",
+    "passed": true
+  },
+  {
+    "name": "Explicit reconnect succeeds",
+    "passed": true
+  },
+  {
+    "name": "Revoked session cannot reconnect",
+    "passed": true
+  },
+  {
+    "name": "Revoked session clears local credentials",
+    "passed": true
+  },
+  {
+    "name": "Saved session restores after server verification",
+    "passed": true
+  },
+  {
+    "name": "Logout closes socket and clears local credentials",
+    "passed": true
+  },
+  {
+    "name": "Server rejects the logged-out access token",
+    "passed": true
+  },
+  {
+    "name": "Guest re-login retains identity",
+    "passed": true
+  },
+  {
+    "name": "Binding email preserves guest identity",
+    "passed": true
+  },
+  {
+    "name": "Bound email login connects to the same account",
+    "passed": true
+  },
+  {
+    "name": "Temporary SDK test account deleted",
+    "passed": true
+  },
+  {
+    "name": "Temporary SDK test account deleted",
+    "passed": true
+  }
+]
