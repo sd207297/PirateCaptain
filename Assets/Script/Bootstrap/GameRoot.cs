@@ -8,18 +8,10 @@ namespace PirateCaptain.Bootstrap
     [DisallowMultipleComponent]
     public sealed class GameRoot : MonoBehaviour
     {
-        private static GameRoot _active;
         private readonly List<ModuleBase> _modules = new List<ModuleBase>();
 
         private void Awake()
         {
-            if (_active != null && _active != this)
-            {
-                Destroy(gameObject);
-                return;
-            }
-
-            _active = this;
             DontDestroyOnLoad(gameObject);
             try
             {
@@ -28,7 +20,6 @@ namespace PirateCaptain.Bootstrap
             catch
             {
                 ShutdownModules();
-                _active = null;
                 Destroy(gameObject);
                 throw;
             }
@@ -65,9 +56,7 @@ namespace PirateCaptain.Bootstrap
 
         private void OnDestroy()
         {
-            if (_active != this) return;
             ShutdownModules();
-            _active = null;
         }
     }
 }
