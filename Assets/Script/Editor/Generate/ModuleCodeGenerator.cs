@@ -549,21 +549,22 @@ namespace {ns}
         return $@"using System;
 using System.Threading.Tasks;
 using ForeverNine.IoC;
+using PirateCaptain.Framework;
 
 namespace {ns}
 {{
     /// <summary>
-    /// {module} 独立模块。创建后调用 OnInitialize，结束时调用 OnShutdown 或 Dispose。
+    /// {module} 模块。在 GameRoot.RegisterModules 中注册，由启动入口负责初始化和释放。
     /// 业务绑定与事件在 {module}Container 内完成。
     /// </summary>
-    public class {module}Module : IDisposable
+    public class {module}Module : ModuleBase, IDisposable
     {{
-        public virtual void OnInitialize()
+        public override void OnInitialize()
         {{
             ContainerManager.Instance.GetOrCreateContainer<{module}Container>(nameof({module}Container));
         }}
 
-        public virtual void OnShutdown()
+        public override void OnShutdown()
         {{
             ContainerManager.Instance?.RemoveContainer(nameof({module}Container));
         }}

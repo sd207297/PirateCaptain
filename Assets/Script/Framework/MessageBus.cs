@@ -10,7 +10,7 @@ namespace PirateCaptain.Framework
     }
 
     /// <summary>在 Unity 主线程使用。按订阅顺序同步派发，回调中新增的订阅从下次发布起生效。</summary>
-    public sealed class MessageBus : IMessageBus
+    public sealed class MessageBus : ModuleBase, IMessageBus
     {
         private readonly Dictionary<Type, Delegate> _handlers = new Dictionary<Type, Delegate>();
 
